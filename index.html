@@ -1,314 +1,402 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jose Miguel Ruiz - Portfolio & CV</title>
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Portfolio de José Miguel Ruiz Guevara, desarrollador fullstack y profesor especializado en IA aplicada, visión por computador, backend Java y docencia técnica."
     />
+    <title>José Miguel Ruiz Guevara | Fullstack, Profesor de IA y Visión Artificial</title>
+    <link rel="preload" as="image" href="1764095789903.jpg" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#technologies">Technologies</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="about-container">
-        <div class="about-text">
-          <h1>Jose Miguel Ruiz</h1>
-          <h2>FullStack Developer & Educator</h2>
-          <p>
-            Apasionado por la tecnología, la inteligencia artificial y el
-            aprendizaje continuo, con experiencia en el desarrollo de
-            aplicaciones modernas y en la enseñanza de programación.
-          </p>
-        </div>
-        <div class="about-photo">
-          <img src="FotoRetrato.png" alt="Jose Miguel Ruiz" />
-        </div>
-      </div>
-      <div class="contact-links">
-        <a
-          href="https://www.linkedin.com/in/josemiguelruizguevara/"
-          target="_blank"
-          >LinkedIn</a
-        >
-        <a href="https://github.com/Chemi90" target="_blank">GitHub</a>
-        <a href="tel:+34655309861">+34 655 30 98 61</a>
-        <a href="mailto:xemiruiz@gmail.com">Email</a>
-        <a
-          href="https://drive.google.com/file/d/12sR4u-FZGbHSwCLcQskjBxkeJw3E3e0s/view?usp=sharing"
-          target="_blank"
-          class="download-cv"
-          >Download CV</a
-        >
-      </div>
-    </section>
+    <header class="site-header" data-header>
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">JM</span>
+        <span>José Miguel Ruiz</span>
+      </a>
 
-    <!-- Technologies Section -->
-    <section id="technologies">
-      <h2>Tecnologías & Habilidades</h2>
-      <div class="tech-container">
-        <div class="tech-card">
-          <h3>Datos Académicos</h3>
-          <ul>
-            <li>Desarrollo de aplicaciones multiplataforma - Centro CESUR</li>
-          </ul>
-        </div>
-        <div class="tech-card">
-          <h3>Backend</h3>
-          <ul>
-            <li>Lenguajes: Java, Kotlin, Python, PHP, Node.js</li>
-            <li>Frameworks: Spring Boot, Hibernate, MyBatis, Quartz</li>
-            <li>Bases de datos: MySQL, PostgreSQL, MongoDB, PL/SQL</li>
-            <li>
-              Optimización: Uso de GPUs, migración de PL/SQL a soluciones eficientes
-            </li>
-          </ul>
-        </div>
-        <div class="tech-card">
-          <h3>Frontend & DevOps</h3>
-          <ul>
-            <li>
-              Desarrollo Frontend: HTML5, CSS3 (Bootstrap, Tailwind), JavaScript
-              (ES6+)
-            </li>
-            <li>Frameworks: Angular, JavaFX</li>
-            <li>Control de versiones: Git (GitHub, GitLab)</li>
-            <li>
-              Integración continua: Jenkins, GitLab CI/CD | Cloud: AWS (EC2, S3,
-              Lambda, RDS), Docker
-            </li>
-          </ul>
-        </div>
-        <div class="tech-card">
-          <h3>Automatización & IA</h3>
-          <ul>
-            <li>Pipelines CI/CD y despliegues automatizados</li>
-            <li>Desarrollo de chatbots modernos</li>
-            <li>
-              Modelos de lenguaje: Integración de OpenAI GPT y Llama para generación
-              de contenido
-            </li>
-            <li>
-              Análisis de datos: TensorFlow, PyTorch, Scikit-learn; proyecto LM
-              Studio basado en Meta-Llama
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-controls="site-nav"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <!-- Experience Section -->
-    <section id="experience">
-      <h2>Experiencia Laboral</h2>
-      <div class="timeline">
-        <!-- Neotalent -->
-        <div class="job">
-          <h3>FullStack Developer at Neotalent</h3>
-          <span class="job-date">Mayo 2024 - Actualidad</span>
-          <p>
-            <strong>Desarrollo de Sistema de Facturación:</strong> Creación desde
-            cero de un sistema para Grupo Piñero (grupo hotelero multinacional) con
-            Java, MyBatis, Quartz y PL/SQL.<br />
-            <strong>Migración de Proyecto:</strong> Lidero la migración de un
-            proyecto crítico desde Java 1.8 a Java 21.<br />
-            <strong>Herramientas Internas:</strong> Desarrollo y mantenimiento de
-            módulos y gestión de tickets con Oracle Forms.<br />
-            <strong>Automatización de Pruebas:</strong> Implementación de pruebas
-            automatizadas con Python.
-          </p>
-        </div>
-        <!-- IFP -->
-        <div class="job">
-          <h3>Profesor de Inteligencia Artificial y Big Data - IFP</h3>
-          <span class="job-date">Febrero 2025 - Actualidad</span>
-          <p>
-            Imparto el módulo de Programación de Inteligencia Artificial, el más
-            extenso del curso. Diseñé y estructuré el temario, combinando teoría con
-            práctica y enseñando conceptos avanzados de Machine Learning, Deep
-            Learning y procesamiento de datos.
-          </p>
-        </div>
-        <!-- NTT Data -->
-        <div class="job">
-          <h3>FullStack Developer at NTT Data</h3>
-          <span class="job-date">Enero 2023 - Septiembre 2023</span>
-          <p>
-            <strong>Migración Técnica:</strong> Lideré la migración de Hibernate a
-            Spring Boot, mejorando la conexión con MySQL y optimizando el
-            rendimiento.<br />
-            <strong>Desarrollo de Aplicaciones:</strong> Desarrollo full stack con
-            JavaFX y Spring Boot, implementando soluciones robustas y escalables.
-          </p>
-        </div>
-        <!-- SIPADAN -->
-        <div class="job">
-          <h3>FullStack Developer at SIPADAN Servicios Formativos SL</h3>
-          <span class="job-date">Noviembre 2023 - Mayo 2024</span>
-          <p>
-            <strong>Cursos e-Learning:</strong> Implementación de plataformas de
-            formación con Angular.<br />
-            <strong>Desarrollo de CRM:</strong> Creación de un CRM en Angular 17.<br />
-            <strong>Comunicación Visual:</strong> Diseño de soluciones interactivas
-            con Angular 16 y PHP.<br />
-            <strong>Optimización:</strong> Migración de PL/SQL a PostgreSQL.<br />
-            <strong>IA para Soporte:</strong> Creación de un asistente basado en IA
-            para responder tickets.
-          </p>
-        </div>
-        <!-- Coding Giants -->
-        <div class="job">
-          <h3>Profesor FullStack Developer - Coding Giants</h3>
-          <span class="job-date">Agosto 2023 - Actualidad</span>
-          <p>
-            Imparto clases a niños y jóvenes de 6 a 18 años utilizando Scratch,
-            Python, C#, Unity, HTML/CSS, JavaScript, Minecraft Education Edition y
-            App Inventor. Adapto contenidos y metodologías a distintos niveles para
-            promover el interés en la programación.
-          </p>
-        </div>
-      </div>
-    </section>
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+        <a href="#perfil">Perfil</a>
+        <a href="#tecnologias">Stack</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>Proyectos Destacados</h2>
-      <div class="project-list">
-        <div class="project">
-          <div class="iframe-wrapper">
-            <iframe
-              src="https://chatbottfg.netlify.app/"
-              class="project-preview"
-              scrolling="no"
-            ></iframe>
+    <main id="contenido">
+      <section class="hero section-shell" id="inicio">
+        <div class="hero-grid">
+          <div class="hero-copy reveal is-visible">
+            <p class="eyebrow">Desarrollador fullstack · Profesor de IA · Visión artificial</p>
+            <h1>Desarrollador fullstack y profesor de IA aplicada.</h1>
+            <p class="hero-lead">
+              Construyo aplicaciones modernas y enseño programación, inteligencia artificial
+              y Big Data. Combino backend, frontend, automatización y análisis de imagen para
+              crear soluciones claras, rápidas y fáciles de mantener.
+            </p>
+
+            <div class="hero-actions" aria-label="Acciones principales">
+              <a class="button primary" href="#proyectos">Ver proyectos</a>
+              <a class="button secondary" href="#contacto">Hablemos</a>
+              <a
+                class="button ghost"
+                href="./Curr%C3%ADculum%20Jose%20Miguel%20Ruiz%20Guevara%20(1).pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                CV
+              </a>
+            </div>
+
+            <div class="hero-metrics" aria-label="Especialidades">
+              <article>
+                <strong>Java 21</strong>
+                <span>Migraciones y backend empresarial</span>
+              </article>
+              <article>
+                <strong>Docencia</strong>
+                <span>IA, Big Data y programación aplicada</span>
+              </article>
+              <article>
+                <strong>IA + visión</strong>
+                <span>GPT, LLaMA, Gemini, OpenCV y ML</span>
+              </article>
+            </div>
           </div>
-          <h3>AI Chatbot</h3>
-          <p>Chatbot interactivo utilizando técnicas NLP.</p>
-          <a href="https://chatbottfg.netlify.app/" target="_blank">Ver Proyecto</a>
-        </div>
-        <div class="project">
-          <div class="iframe-wrapper">
-            <iframe
-              src="https://bigfoottdm.netlify.app/"
-              class="project-preview"
-              scrolling="no"
-            ></iframe>
-          </div>
-          <h3>BigFootTDM</h3>
-          <p>Web Restaurante BigFootTDM.</p>
-          <a href="https://bigfoottdm.netlify.app/" target="_blank">Ver Proyecto</a>
-        </div>
-        <div class="project">
-          <div class="iframe-wrapper">
-            <iframe
-              src="https://your-webapp-3.com"
-              class="project-preview"
-              scrolling="no"
-            ></iframe>
-          </div>
-          <h3>Predictive Analytics Tool</h3>
-          <p>Herramienta de análisis predictivo (EN CONSTRUCCIÓN).</p>
-          <a href="https://your-webapp-3.com" target="_blank">Ver Proyecto</a>
-        </div>
-        <div class="project">
-          <div class="iframe-wrapper">
-            <!-- Si no cuentas con demo en vivo, puedes usar una imagen ilustrativa -->
+
+          <div class="portrait-card reveal is-visible">
             <img
-              src="lm-studio.png"
-              alt="LM Studio Project"
-              class="project-preview"
+              src="1764095789903.jpg"
+              width="400"
+              height="400"
+              alt="Retrato profesional de José Miguel Ruiz Guevara"
+              fetchpriority="high"
+              decoding="async"
             />
+            <div class="portrait-caption">
+              <span>Desarrollador fullstack, profesor y especialista en IA aplicada</span>
+            </div>
           </div>
-          <h3>LM Studio Project</h3>
-          <p>
-            Proyecto basado en Meta-Llama, con entrenamiento de modelos optimizados
-            para tareas específicas (EN CONSTRUCCIÓN).
-          </p>
-          <a href="#" target="_blank">Ver Proyecto</a>
         </div>
-        <div class="project">
-          <div class="iframe-wrapper">
-            <iframe
-              src="https://cuestionarionacionalidad.netlify.app"
-              class="project-preview"
-              scrolling="no"
-            ></iframe>
+      </section>
+
+      <section class="section-shell profile-section" id="perfil">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Perfil</p>
+          <h2>Software, IA y formación técnica con mirada de producto.</h2>
+          <p>
+            Mi perfil une desarrollo fullstack y docencia técnica. Trabajo en sistemas
+            empresariales, plataformas web, automatización, visión artificial y formación,
+            aportando claridad cuando hay que explicar, construir y mejorar a la vez.
+          </p>
+        </div>
+
+        <div class="profile-grid">
+          <article class="profile-card reveal">
+            <span class="card-kicker">Backend</span>
+            <h3>Sistemas robustos</h3>
+            <p>
+              Java, Spring Boot, MyBatis, Hibernate, PL/SQL y bases de datos relacionales
+              para entornos críticos, integraciones y procesos de facturación.
+            </p>
+          </article>
+          <article class="profile-card reveal">
+            <span class="card-kicker">IA aplicada</span>
+            <h3>Modelos que resuelven</h3>
+            <p>
+              Integración de GPT, LLaMA y Gemini, proyectos con Python, TensorFlow,
+              PyTorch, Scikit-learn y prácticas de visión por computador con OpenCV.
+            </p>
+          </article>
+          <article class="profile-card reveal">
+            <span class="card-kicker">Profesor</span>
+            <h3>Enseñar para construir mejor</h3>
+            <p>
+              Creación de temarios, ejercicios y proyectos de programación, IA y Big Data
+              para FP, academias, alumnado joven y perfiles técnicos en crecimiento.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell stack-section" id="tecnologias">
+        <div class="section-heading compact reveal">
+          <p class="eyebrow">Stack técnico</p>
+          <h2>Tecnologías para construir, automatizar y enseñar con solvencia.</h2>
+        </div>
+
+        <div class="stack-grid">
+          <article class="stack-group reveal">
+            <h3>Backend y datos</h3>
+            <div class="tag-list">
+              <span>Java</span>
+              <span>Java 21</span>
+              <span>Kotlin</span>
+              <span>Python</span>
+              <span>PHP</span>
+              <span>Node.js</span>
+              <span>Spring Boot</span>
+              <span>Hibernate</span>
+              <span>MyBatis</span>
+              <span>Quartz</span>
+              <span>MySQL</span>
+              <span>PostgreSQL</span>
+              <span>MongoDB</span>
+              <span>PL/SQL</span>
+            </div>
+          </article>
+
+          <article class="stack-group reveal">
+            <h3>Frontend y producto</h3>
+            <div class="tag-list">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>Angular</span>
+              <span>Angular 17</span>
+              <span>JavaFX</span>
+              <span>Bootstrap</span>
+              <span>Tailwind</span>
+              <span>PWA</span>
+              <span>Responsive UI</span>
+            </div>
+          </article>
+
+          <article class="stack-group reveal">
+            <h3>IA, visión y DevOps</h3>
+            <div class="tag-list">
+              <span>OpenCV</span>
+              <span>GPT</span>
+              <span>LLaMA</span>
+              <span>Gemini</span>
+              <span>TensorFlow</span>
+              <span>PyTorch</span>
+              <span>Scikit-learn</span>
+              <span>Docker</span>
+              <span>AWS</span>
+              <span>Jenkins</span>
+              <span>GitLab CI/CD</span>
+              <span>GitHub</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell experience-section" id="experiencia">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Experiencia</p>
+          <h2>Trayectoria conectando software, IA, educación y sistemas reales.</h2>
+        </div>
+
+        <div class="timeline" aria-label="Experiencia laboral">
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Actualidad</span>
+            <div>
+              <h3>Técnico de visión artificial · Deuser, Indra Group</h3>
+              <p>
+                Desarrollo de soluciones de software y visión artificial para proyectos
+                industriales y ERP, integrando tecnologías modernas, automatización y soporte
+                técnico especializado.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Actualidad</span>
+            <div>
+              <h3>Profesor de IA y Big Data · IFP / Code Space</h3>
+              <p>
+                Diseño e impartición de contenidos de programación en inteligencia artificial
+                con Python, Scikit-learn, TensorFlow, GPT, visión por computador y prácticas
+                aplicadas.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2024</span>
+            <div>
+              <h3>Fullstack Developer · Neotalent para Grupo Piñero</h3>
+              <p>
+                Desarrollo de sistemas de facturación con Java y PL/SQL, migración de
+                proyectos a Java 21 y automatización de pruebas con Python.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">2023</span>
+            <div>
+              <h3>Fullstack Developer · NTT Data y Sipadan</h3>
+              <p>
+                Migraciones a Spring Boot, aplicaciones empresariales con JavaFX y MySQL,
+                plataformas e-learning, CRM en Angular y asistentes IA para soporte técnico.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-date">Fintech</span>
+            <div>
+              <h3>Analista programador · Ayesa</h3>
+              <p>
+                Integraciones críticas en sistemas TPV-PC para Redsys LATAM, trabajando con
+                dispositivos físicos, PIN Pads, terminales de pago y protocolos EMV.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell projects-section" id="proyectos">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Proyectos propios</p>
+          <h2>Dos productos reales, publicados y enfocados a utilidad inmediata.</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <a
+              class="project-media"
+              href="https://nebulasur.es/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir Nébula Sur"
+            >
+              <img
+                src="assets/nebulasur-preview.jpg"
+                width="960"
+                height="600"
+                alt="Vista previa de la web Nébula Sur"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <div class="project-content">
+              <p class="project-type">Servicios, automatización e IA</p>
+              <h3>Nébula Sur</h3>
+              <p>
+                Web corporativa para servicios locales y consultoría online en España:
+                IA aplicada, automatización, digitalización, formación, electricidad,
+                limpieza y mantenimiento informático.
+              </p>
+              <div class="project-tags" aria-label="Tecnologías y enfoque">
+                <span>Web corporativa</span>
+                <span>IA aplicada</span>
+                <span>Consultoría</span>
+              </div>
+              <a class="project-link" href="https://nebulasur.es/" target="_blank" rel="noreferrer">
+                Abrir proyecto
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <a
+              class="project-media"
+              href="https://appgymregistro.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir Gym Tracker"
+            >
+              <img
+                src="assets/gymtracker-preview.jpg"
+                width="960"
+                height="600"
+                alt="Vista previa de Gym Tracker"
+                loading="lazy"
+                decoding="async"
+              />
+            </a>
+            <div class="project-content">
+              <p class="project-type">Entrenamiento, nutrición e IA</p>
+              <h3>Gym Tracker</h3>
+              <p>
+                Aplicación fullstack para registrar entrenos, comidas, medidas y progreso.
+                Genera planes con IA, guarda plantillas reutilizables y exporta informes PDF
+                por intervalo.
+              </p>
+              <div class="project-tags" aria-label="Tecnologías y enfoque">
+                <span>Spring Boot</span>
+                <span>MySQL</span>
+                <span>PWA</span>
+                <span>IA</span>
+              </div>
+              <a
+                class="project-link"
+                href="https://appgymregistro.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abrir proyecto
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-shell contact-section" id="contacto">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contacto</p>
+          <h2>¿Tienes un sistema que modernizar, una idea que lanzar o un equipo que formar?</h2>
+          <p>
+            Escríbeme y vemos cómo convertirlo en una solución clara, rápida y sostenible.
+          </p>
+
+          <div class="contact-links" aria-label="Enlaces de contacto">
+            <a href="mailto:xemiruiz@gmail.com">xemiruiz@gmail.com</a>
+            <a href="tel:+34655309861">+34 655 30 98 61</a>
+            <a href="https://github.com/Chemi90" target="_blank" rel="noreferrer">GitHub</a>
+            <a
+              href="https://www.linkedin.com/in/josemiguelruizguevara/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
           </div>
-          <h3>Cuestionario de Nacionalidad Española con IA</h3>
-          <p>
-            Genera cuestionarios aleatorios sobre la nacionalidad española mediante un lector de PDF con IA creado por mi. Incluye opción de simulación del examen. 
-          </p>
-          <a
-            href="https://cuestionarionacionalidad.netlify.app"
-            target="_blank"
-            >Ver Proyecto</a
-          >
         </div>
-      </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <form id="contactForm">
-        <label for="name">Your Name:</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Your Name"
-          required
-        />
+        <form class="contact-form reveal" id="contactForm">
+          <label for="name">Nombre</label>
+          <input type="text" name="name" id="name" autocomplete="name" required />
 
-        <label for="email">Your Email:</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Your Email"
-          required
-        />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" autocomplete="email" required />
 
-        <label for="phone">Your Phone:</label>
-        <input
-          type="tel"
-          name="phone"
-          id="phone"
-          placeholder="Your Phone"
-          required
-        />
+          <label for="phone">Teléfono</label>
+          <input type="tel" name="phone" id="phone" autocomplete="tel" />
 
-        <label for="message">Your Message:</label>
-        <textarea
-          name="message"
-          id="message"
-          placeholder="Your Message"
-          rows="5"
-          required
-        ></textarea>
+          <label for="message">Mensaje</label>
+          <textarea name="message" id="message" rows="5" required></textarea>
 
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+          <button class="button primary form-button" type="submit">Enviar mensaje</button>
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2024 Jose Miguel Ruiz. All Rights Reserved.</p>
+    <footer class="site-footer">
+      <p>© 2026 José Miguel Ruiz Guevara. Desarrollador fullstack, profesor de IA y visión artificial.</p>
     </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
