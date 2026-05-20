@@ -14,6 +14,7 @@
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="site-header" data-header>
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
@@ -35,6 +36,7 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
         <a href="#perfil">Perfil</a>
+        <a href="#servicios">Servicios</a>
         <a href="#tecnologias">Stack</a>
         <a href="#experiencia">Experiencia</a>
         <a href="#proyectos">Proyectos</a>
@@ -46,8 +48,11 @@
       <section class="hero section-shell" id="inicio">
         <div class="hero-grid">
           <div class="hero-copy reveal is-visible">
-            <p class="eyebrow">Desarrollador fullstack · Profesor de IA · Visión artificial</p>
-            <h1>Desarrollador fullstack y profesor de IA aplicada.</h1>
+            <p class="eyebrow">Fullstack · IA aplicada · Visión artificial</p>
+            <div class="hero-title-wrap">
+              <h1><span>José Miguel</span> Ruiz Guevara</h1>
+              <p class="hero-banner">Profesor técnico + builder fullstack</p>
+            </div>
             <p class="hero-lead">
               Construyo aplicaciones modernas y enseño programación, inteligencia artificial
               y Big Data. Combino backend, frontend, automatización y análisis de imagen para
@@ -69,32 +74,44 @@
 
             <div class="hero-metrics" aria-label="Especialidades">
               <article>
-                <strong>Java 21</strong>
-                <span>Migraciones y backend empresarial</span>
+                <strong>Lenguajes</strong>
+                <span>Java, Python, JavaScript, SQL, PHP y Kotlin</span>
               </article>
               <article>
-                <strong>Docencia</strong>
-                <span>IA, Big Data y programación aplicada</span>
+                <strong>Frameworks</strong>
+                <span>Spring Boot, Angular, Node.js, Hibernate y MyBatis</span>
               </article>
               <article>
-                <strong>IA + visión</strong>
-                <span>GPT, LLaMA, Gemini, OpenCV y ML</span>
+                <strong>Forma de trabajo</strong>
+                <span>APIs, testing, automatización, CI/CD y documentación</span>
               </article>
             </div>
           </div>
 
-          <div class="portrait-card reveal is-visible">
-            <img
-              src="1764095789903.jpg"
-              width="400"
-              height="400"
-              alt="Retrato profesional de José Miguel Ruiz Guevara"
-              fetchpriority="high"
-              decoding="async"
-            />
-            <div class="portrait-caption">
-              <span>Desarrollador fullstack, profesor y especialista en IA aplicada</span>
+          <div class="hero-visual reveal is-visible" data-hero-visual>
+            <div class="portrait-card">
+              <img
+                src="1764095789903.jpg"
+                width="400"
+                height="400"
+                alt="Retrato profesional de José Miguel Ruiz Guevara"
+                fetchpriority="high"
+                decoding="async"
+              />
+              <div class="portrait-caption">
+                <span>Desarrollador fullstack, profesor y especialista en IA aplicada</span>
+              </div>
             </div>
+
+            <aside class="signal-panel" aria-label="Foco profesional actual">
+              <span class="signal-dot"></span>
+              <p>Disponible para proyectos de software, IA aplicada y formación técnica.</p>
+              <ul>
+                <li>Backend Java / Spring</li>
+                <li>Automatización y scripting</li>
+                <li>Computer vision + modelos IA</li>
+              </ul>
+            </aside>
           </div>
         </div>
       </section>
@@ -138,64 +155,99 @@
         </div>
       </section>
 
+      <section class="section-shell services-section" id="servicios">
+        <div class="section-heading compact reveal">
+          <p class="eyebrow">Servicios</p>
+          <h2>Un puente entre código, IA y aprendizaje práctico.</h2>
+        </div>
+
+        <div class="service-board">
+          <article class="service-item reveal">
+            <span class="service-count">01</span>
+            <h3>Construir producto</h3>
+            <p>
+              Diseño y desarrollo de aplicaciones web, APIs y procesos backend con foco en
+              rendimiento, mantenibilidad y despliegue real.
+            </p>
+          </article>
+          <article class="service-item reveal">
+            <span class="service-count">02</span>
+            <h3>Aplicar IA con criterio</h3>
+            <p>
+              Automatizaciones, asistentes, análisis de imagen y prototipos con modelos
+              generativos o visión artificial, conectados a necesidades concretas.
+            </p>
+          </article>
+          <article class="service-item reveal">
+            <span class="service-count">03</span>
+            <h3>Formar equipos</h3>
+            <p>
+              Contenido técnico, mentoría y clases prácticas para que el equipo entienda,
+              pruebe y mantenga lo que se está construyendo.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section class="section-shell stack-section" id="tecnologias">
         <div class="section-heading compact reveal">
-          <p class="eyebrow">Stack técnico</p>
-          <h2>Tecnologías para construir, automatizar y enseñar con solvencia.</h2>
+          <p class="eyebrow">Stack y forma de trabajo</p>
+          <h2>Conocimientos organizados por lenguajes, frameworks y prácticas de desarrollo.</h2>
         </div>
 
         <div class="stack-grid">
           <article class="stack-group reveal">
-            <h3>Backend y datos</h3>
+            <h3>Lenguajes y bases de datos</h3>
             <div class="tag-list">
               <span>Java</span>
-              <span>Java 21</span>
               <span>Kotlin</span>
               <span>Python</span>
               <span>PHP</span>
-              <span>Node.js</span>
-              <span>Spring Boot</span>
-              <span>Hibernate</span>
-              <span>MyBatis</span>
-              <span>Quartz</span>
+              <span>JavaScript</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>SQL</span>
+              <span>PL/SQL</span>
               <span>MySQL</span>
               <span>PostgreSQL</span>
               <span>MongoDB</span>
-              <span>PL/SQL</span>
             </div>
           </article>
 
           <article class="stack-group reveal">
-            <h3>Frontend y producto</h3>
+            <h3>Frameworks y librerías</h3>
             <div class="tag-list">
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>JavaScript</span>
+              <span>Spring Boot</span>
+              <span>Hibernate</span>
+              <span>MyBatis</span>
+              <span>Node.js</span>
               <span>Angular</span>
-              <span>Angular 17</span>
               <span>JavaFX</span>
               <span>Bootstrap</span>
               <span>Tailwind</span>
-              <span>PWA</span>
-              <span>Responsive UI</span>
+              <span>OpenCV</span>
+              <span>TensorFlow</span>
+              <span>PyTorch</span>
+              <span>Scikit-learn</span>
             </div>
           </article>
 
           <article class="stack-group reveal">
-            <h3>IA, visión y DevOps</h3>
+            <h3>IA aplicada y manera de trabajar</h3>
             <div class="tag-list">
-              <span>OpenCV</span>
-              <span>GPT</span>
-              <span>LLaMA</span>
-              <span>Gemini</span>
-              <span>TensorFlow</span>
-              <span>PyTorch</span>
-              <span>Scikit-learn</span>
+              <span>APIs REST</span>
+              <span>Automatización</span>
+              <span>Testing</span>
+              <span>CI/CD</span>
+              <span>Git</span>
               <span>Docker</span>
               <span>AWS</span>
-              <span>Jenkins</span>
-              <span>GitLab CI/CD</span>
-              <span>GitHub</span>
+              <span>PWA</span>
+              <span>Responsive UI</span>
+              <span>Documentación técnica</span>
+              <span>Metodologías ágiles</span>
+              <span>Modelos generativos</span>
+              <span>Visión artificial</span>
             </div>
           </article>
         </div>
@@ -237,8 +289,8 @@
             <div>
               <h3>Fullstack Developer · Neotalent para Grupo Piñero</h3>
               <p>
-                Desarrollo de sistemas de facturación con Java y PL/SQL, migración de
-                proyectos a Java 21 y automatización de pruebas con Python.
+                Desarrollo de sistemas de facturación con Java y PL/SQL, modernización de
+                proyectos Java y automatización de pruebas con Python.
               </p>
             </div>
           </article>
@@ -290,6 +342,7 @@
                 loading="lazy"
                 decoding="async"
               />
+              <span class="project-corner" aria-hidden="true"><span>→</span></span>
             </a>
             <div class="project-content">
               <p class="project-type">Servicios, automatización e IA</p>
@@ -326,6 +379,7 @@
                 loading="lazy"
                 decoding="async"
               />
+              <span class="project-corner" aria-hidden="true"><span>→</span></span>
             </a>
             <div class="project-content">
               <p class="project-type">Entrenamiento, nutrición e IA</p>
@@ -350,6 +404,15 @@
                 Abrir proyecto
               </a>
             </div>
+          </article>
+
+          <article class="project-card project-card-empty reveal">
+            <a class="project-empty-link" href="#contacto">
+              <span class="project-plus" aria-hidden="true">+</span>
+              <p class="project-type">Siguiente reto</p>
+              <h3>¿Tienes un producto, automatización o formación que lanzar?</h3>
+              <span class="project-link">Cuéntame la idea</span>
+            </a>
           </article>
         </div>
       </section>

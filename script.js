@@ -1,7 +1,24 @@
+document.documentElement.classList.add("js");
+
 const body = document.body;
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
+const scrollProgress = document.querySelector(".scroll-progress span");
+
+const updateScrollProgress = () => {
+  if (!scrollProgress) {
+    return;
+  }
+
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+  scrollProgress.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+};
+
+updateScrollProgress();
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
@@ -60,6 +77,28 @@ if ("IntersectionObserver" in window && sections.length) {
   );
 
   sections.forEach((section) => sectionObserver.observe(section));
+}
+
+const heroVisual = document.querySelector("[data-hero-visual]");
+const canUsePointerMotion =
+  heroVisual &&
+  window.matchMedia("(pointer: fine)").matches &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (canUsePointerMotion) {
+  heroVisual.addEventListener("pointermove", (event) => {
+    const bounds = heroVisual.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+    heroVisual.style.setProperty("--tilt-x", `${y * -5}deg`);
+    heroVisual.style.setProperty("--tilt-y", `${x * 6}deg`);
+  });
+
+  heroVisual.addEventListener("pointerleave", () => {
+    heroVisual.style.setProperty("--tilt-x", "0deg");
+    heroVisual.style.setProperty("--tilt-y", "0deg");
+  });
 }
 
 const contactForm = document.getElementById("contactForm");
