@@ -439,7 +439,12 @@
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contactForm">
+        <form
+          class="contact-form reveal"
+          id="contactForm"
+          action="https://formspree.io/f/xldrkjyd"
+          method="POST"
+        >
           <label for="name">Nombre</label>
           <input type="text" name="name" id="name" autocomplete="name" required />
 
@@ -451,6 +456,17 @@
 
           <label for="message">Mensaje</label>
           <textarea name="message" id="message" rows="5" required></textarea>
+
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="contact-website">Website</label>
+            <input
+              type="text"
+              name="_gotcha"
+              id="contact-website"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
 
           <button class="button primary form-button" type="submit">Enviar mensaje</button>
           <p class="form-status" aria-live="polite"></p>

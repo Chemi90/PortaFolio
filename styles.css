@@ -387,6 +387,8 @@ section[id] {
   display: grid;
   justify-items: end;
   gap: 16px;
+  padding-top: 30px;
+  padding-bottom: 72px;
   min-width: 0;
 }
 
@@ -399,7 +401,7 @@ section[id] {
     linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06)),
     rgba(255, 255, 255, 0.08);
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
-  overflow: hidden;
+  overflow: visible;
   transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
   transform-style: preserve-3d;
   transition: transform 220ms ease;
@@ -420,6 +422,7 @@ section[id] {
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
   object-fit: cover;
   object-position: center top;
   filter: saturate(1.04) contrast(1.02);
@@ -427,7 +430,7 @@ section[id] {
 
 .portrait-caption {
   position: absolute;
-  top: 18px;
+  top: -30px;
   left: 18px;
   z-index: 2;
   max-width: calc(100% - 36px);
@@ -443,7 +446,7 @@ section[id] {
 .signal-panel {
   position: absolute;
   right: min(20px, 5%);
-  bottom: -36px;
+  bottom: 0;
   z-index: 4;
   width: min(92%, 360px);
   border: 1px solid rgba(185, 215, 90, 0.34);
@@ -900,6 +903,7 @@ section[id] {
 .contact-form {
   display: grid;
   gap: 10px;
+  position: relative;
   padding: 24px;
 }
 
@@ -931,6 +935,22 @@ section[id] {
 .contact-form textarea:focus {
   border-color: var(--teal);
   box-shadow: 0 0 0 4px rgba(14, 159, 154, 0.12);
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -100vw;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.form-honeypot input {
+  width: 1px;
+  height: 1px;
+  border: 0;
+  padding: 0;
 }
 
 .form-button {
@@ -1129,6 +1149,11 @@ section[id] {
     right: auto;
     bottom: auto;
     width: 100%;
+  }
+
+  .hero-visual {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .timeline-item {

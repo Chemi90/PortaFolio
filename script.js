@@ -102,10 +102,30 @@ if (canUsePointerMotion) {
 }
 
 const contactForm = document.getElementById("contactForm");
+const localContactHosts = new Set(["localhost", "127.0.0.1", "::1", "0.0.0.0"]);
+const contactSubmitCooldownMs = 90 * 1000;
+const contactSubmitStorageKey = "portfolio-contact-last-submit";
+
+const getLastContactSubmitAt = () => {
+  try {
+    return Number(window.localStorage.getItem(contactSubmitStorageKey)) || 0;
+  } catch (error) {
+    return 0;
+  }
+};
+
+const setLastContactSubmitAt = (value) => {
+  try {
+    window.localStorage.setItem(contactSubmitStorageKey, String(value));
+  } catch (error) {
+    // Ignore browsers where localStorage is unavailable.
+  }
+};
 
 if (contactForm) {
   const submitButton = contactForm.querySelector("button[type='submit']");
   const status = contactForm.querySelector(".form-status");
+  const formEndpoint = contactForm.getAttribute("action");
 
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -114,14 +134,41 @@ if (contactForm) {
       return;
     }
 
+    const formData = new FormData(contactForm);
+    const honeypotValue = String(formData.get("_gotcha") || "").trim();
+    const isLocalSubmit =
+      window.location.protocol === "file:" || localContactHosts.has(window.location.hostname);
+
+    if (honeypotValue) {
+      contactForm.reset();
+      status.textContent = "Mensaje enviado correctamente. Gracias por escribir.";
+      return;
+    }
+
+    if (isLocalSubmit) {
+      console.info("Formulario simulado en entorno local.", Object.fromEntries(formData));
+      contactForm.reset();
+      status.textContent = "Modo local: envio simulado. No se ha enviado a Formspree.";
+      return;
+    }
+
+    const now = Date.now();
+    const lastSubmitAt = getLastContactSubmitAt();
+    const waitMs = contactSubmitCooldownMs - (now - lastSubmitAt);
+
+    if (waitMs > 0) {
+      status.textContent = `Espera ${Math.ceil(waitMs / 1000)} s antes de volver a enviar.`;
+      return;
+    }
+
     submitButton.disabled = true;
     submitButton.textContent = "Enviando...";
     status.textContent = "";
 
     try {
-      const response = await fetch("https://formspree.io/f/xldrkjyd", {
+      const response = await fetch(formEndpoint, {
         method: "POST",
-        body: new FormData(contactForm),
+        body: formData,
         headers: {
           Accept: "application/json",
         },
@@ -132,6 +179,7 @@ if (contactForm) {
       }
 
       contactForm.reset();
+      setLastContactSubmitAt(now);
       status.textContent = "Mensaje enviado correctamente. Gracias por escribir.";
     } catch (error) {
       console.error(error);
