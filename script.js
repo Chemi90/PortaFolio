@@ -4,21 +4,15 @@ const body = document.body;
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
-const scrollProgress = document.querySelector(".scroll-progress span");
+const scrollLine = document.querySelector("[data-scroll-line]");
 
-const updateScrollProgress = () => {
-  if (!scrollProgress) {
-    return;
-  }
-
-  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
-  scrollProgress.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+const closeNavigation = () => {
+  if (!navToggle || !siteNav) return;
+  siteNav.classList.remove("is-open");
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-label", "Abrir menú");
+  body.classList.remove("nav-open");
 };
-
-updateScrollProgress();
-window.addEventListener("scroll", updateScrollProgress, { passive: true });
-window.addEventListener("resize", updateScrollProgress);
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
@@ -28,29 +22,46 @@ if (navToggle && siteNav) {
     body.classList.toggle("nav-open", isOpen);
   });
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      siteNav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.setAttribute("aria-label", "Abrir menú");
-      body.classList.remove("nav-open");
-    });
+  navLinks.forEach((link) => link.addEventListener("click", closeNavigation));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeNavigation();
   });
 }
 
-const revealItems = document.querySelectorAll(".reveal");
+let scrollTicking = false;
+
+const paintScrollProgress = () => {
+  if (scrollLine) {
+    const height = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = height > 0 ? window.scrollY / height : 0;
+    scrollLine.style.transform = `scaleX(${Math.min(Math.max(ratio, 0), 1)})`;
+  }
+  scrollTicking = false;
+};
+
+const requestScrollPaint = () => {
+  if (scrollTicking) return;
+  scrollTicking = true;
+  window.requestAnimationFrame(paintScrollProgress);
+};
+
+paintScrollProgress();
+window.addEventListener("scroll", requestScrollPaint, { passive: true });
+window.addEventListener("resize", requestScrollPaint);
+
+const revealItems = document.querySelectorAll("[data-reveal]");
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          revealObserver.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
       });
     },
-    { threshold: 0.14 }
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
@@ -58,135 +69,105 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-const sections = Array.from(document.querySelectorAll("section[id]"));
+const sections = Array.from(document.querySelectorAll("main section[id]"));
 
 if ("IntersectionObserver" in window && sections.length) {
   const sectionObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
+        if (!entry.isIntersecting) return;
+        const target = `#${entry.target.id}`;
         navLinks.forEach((link) => {
-          link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+          const isActive = link.getAttribute("href") === target;
+          link.classList.toggle("active", isActive);
+          if (isActive) link.setAttribute("aria-current", "location");
+          else link.removeAttribute("aria-current");
         });
       });
     },
-    { rootMargin: "-42% 0px -46% 0px", threshold: 0.01 }
+    { rootMargin: "-42% 0px -48% 0px", threshold: 0.01 }
   );
 
   sections.forEach((section) => sectionObserver.observe(section));
 }
 
-const heroVisual = document.querySelector("[data-hero-visual]");
-const canUsePointerMotion =
-  heroVisual &&
-  window.matchMedia("(pointer: fine)").matches &&
-  !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (canUsePointerMotion) {
-  heroVisual.addEventListener("pointermove", (event) => {
-    const bounds = heroVisual.getBoundingClientRect();
-    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-
-    heroVisual.style.setProperty("--tilt-x", `${y * -5}deg`);
-    heroVisual.style.setProperty("--tilt-y", `${x * 6}deg`);
-  });
-
-  heroVisual.addEventListener("pointerleave", () => {
-    heroVisual.style.setProperty("--tilt-x", "0deg");
-    heroVisual.style.setProperty("--tilt-y", "0deg");
-  });
-}
-
 const contactForm = document.getElementById("contactForm");
-const localContactHosts = new Set(["localhost", "127.0.0.1", "::1", "0.0.0.0"]);
-const contactSubmitCooldownMs = 90 * 1000;
-const contactSubmitStorageKey = "portfolio-contact-last-submit";
+const localHosts = new Set(["localhost", "127.0.0.1", "::1", "0.0.0.0"]);
+const cooldownMs = 90 * 1000;
+const storageKey = "portfolio-contact-last-submit";
 
-const getLastContactSubmitAt = () => {
+const readLastSubmit = () => {
   try {
-    return Number(window.localStorage.getItem(contactSubmitStorageKey)) || 0;
-  } catch (error) {
+    return Number(window.localStorage.getItem(storageKey)) || 0;
+  } catch {
     return 0;
   }
 };
 
-const setLastContactSubmitAt = (value) => {
+const saveLastSubmit = (value) => {
   try {
-    window.localStorage.setItem(contactSubmitStorageKey, String(value));
-  } catch (error) {
-    // Ignore browsers where localStorage is unavailable.
+    window.localStorage.setItem(storageKey, String(value));
+  } catch {
+    // El formulario también funciona si el navegador bloquea localStorage.
   }
 };
 
 if (contactForm) {
-  const submitButton = contactForm.querySelector("button[type='submit']");
+  const button = contactForm.querySelector("button[type='submit']");
   const status = contactForm.querySelector(".form-status");
-  const formEndpoint = contactForm.getAttribute("action");
+  const endpoint = contactForm.getAttribute("action");
 
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    if (!button || !status || !endpoint) return;
 
-    if (!submitButton || !status) {
+    const data = new FormData(contactForm);
+    const honeypot = String(data.get("_gotcha") || "").trim();
+    const isLocal =
+      window.location.protocol === "file:" || localHosts.has(window.location.hostname);
+
+    if (honeypot) {
+      contactForm.reset();
+      status.textContent = "Mensaje enviado. Gracias por escribir.";
       return;
     }
 
-    const formData = new FormData(contactForm);
-    const honeypotValue = String(formData.get("_gotcha") || "").trim();
-    const isLocalSubmit =
-      window.location.protocol === "file:" || localContactHosts.has(window.location.hostname);
-
-    if (honeypotValue) {
+    if (isLocal) {
       contactForm.reset();
-      status.textContent = "Mensaje enviado correctamente. Gracias por escribir.";
-      return;
-    }
-
-    if (isLocalSubmit) {
-      console.info("Formulario simulado en entorno local.", Object.fromEntries(formData));
-      contactForm.reset();
-      status.textContent = "Modo local: envio simulado. No se ha enviado a Formspree.";
+      status.textContent = "Prueba local completada: no se ha enviado ningún dato.";
       return;
     }
 
     const now = Date.now();
-    const lastSubmitAt = getLastContactSubmitAt();
-    const waitMs = contactSubmitCooldownMs - (now - lastSubmitAt);
+    const waitMs = cooldownMs - (now - readLastSubmit());
 
     if (waitMs > 0) {
       status.textContent = `Espera ${Math.ceil(waitMs / 1000)} s antes de volver a enviar.`;
       return;
     }
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Enviando...";
+    button.disabled = true;
+    button.firstChild.textContent = "Enviando… ";
     status.textContent = "";
 
     try {
-      const response = await fetch(formEndpoint, {
+      const response = await fetch(endpoint, {
         method: "POST",
-        body: formData,
-        headers: {
-          Accept: "application/json",
-        },
+        body: data,
+        headers: { Accept: "application/json" },
       });
 
-      if (!response.ok) {
-        throw new Error("Formspree request failed");
-      }
+      if (!response.ok) throw new Error(`Formspree respondió ${response.status}`);
 
       contactForm.reset();
-      setLastContactSubmitAt(now);
-      status.textContent = "Mensaje enviado correctamente. Gracias por escribir.";
+      saveLastSubmit(now);
+      status.textContent = "Mensaje enviado. Gracias por escribir.";
     } catch (error) {
       console.error(error);
-      status.textContent = "No se pudo enviar ahora. Puedes escribirme por email.";
+      status.textContent = "No se pudo enviar. También puedes escribirme por email.";
     } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = "Enviar mensaje";
+      button.disabled = false;
+      button.firstChild.textContent = "Enviar mensaje ";
     }
   });
 }

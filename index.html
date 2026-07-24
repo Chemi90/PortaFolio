@@ -1,25 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2efe6">
+    <meta name="color-scheme" content="light">
     <meta
       name="description"
-      content="Portfolio de José Miguel Ruiz Guevara, desarrollador fullstack y profesor especializado en IA aplicada, visión por computador, backend Java y docencia técnica."
-    />
-    <title>José Miguel Ruiz Guevara | Fullstack, Profesor de IA y Visión Artificial</title>
-    <link rel="preload" as="image" href="1764095789903.jpg" />
-    <link rel="stylesheet" href="styles.css" />
+      content="Portfolio de José Miguel Ruiz Guevara: desarrollo full-stack, IA aplicada, automatización y formación técnica. Proyectos reales con Java, Spring Boot, React, Angular y Python."
+    >
+    <meta name="author" content="José Miguel Ruiz Guevara">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:title" content="José Miguel Ruiz — Full-stack, IA aplicada y docencia">
+    <meta
+      property="og:description"
+      content="Software útil, automatización e IA aplicada con criterio de producto."
+    >
+    <meta property="og:url" content="https://chemi90.github.io/PortaFolio/">
+    <meta
+      property="og:image"
+      content="https://chemi90.github.io/PortaFolio/1764095789903.jpg"
+    >
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://chemi90.github.io/PortaFolio/">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link
+      rel="preload"
+      as="image"
+      href="assets/portrait-800.webp"
+      imagesrcset="assets/portrait-400.webp 400w, assets/portrait-800.webp 800w"
+      imagesizes="(max-width: 640px) 82vw, (max-width: 900px) 42vw, 400px"
+      fetchpriority="high"
+    >
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "José Miguel Ruiz Guevara",
+        "url": "https://chemi90.github.io/PortaFolio/",
+        "image": "https://chemi90.github.io/PortaFolio/1764095789903.jpg",
+        "jobTitle": "Desarrollador full-stack y formador de inteligencia artificial",
+        "sameAs": [
+          "https://github.com/Chemi90",
+          "https://www.linkedin.com/in/josemiguelruizguevara/",
+          "https://nebulasur.es/"
+        ],
+        "knowsAbout": [
+          "Java",
+          "Spring Boot",
+          "React",
+          "Angular",
+          "Python",
+          "Inteligencia artificial",
+          "Visión artificial",
+          "Automatización"
+        ]
+      }
+    </script>
+    <title>José Miguel Ruiz | Full-stack, IA aplicada y docencia</title>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="scroll-line" aria-hidden="true"><span data-scroll-line></span></div>
 
     <header class="site-header" data-header>
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <span class="brand-mark">JM</span>
-        <span>José Miguel Ruiz</span>
+      <a class="wordmark" href="#inicio">
+        <span class="wordmark-mark">JM</span>
+        <span class="wordmark-name">José Miguel Ruiz</span>
       </a>
 
       <button
@@ -31,403 +82,455 @@
       >
         <span></span>
         <span></span>
-        <span></span>
       </button>
 
       <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
         <a href="#perfil">Perfil</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#tecnologias">Stack</a>
+        <a href="#trabajo">Trabajo</a>
         <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
       </nav>
+
+      <a class="header-status" href="mailto:xemiruiz@gmail.com">
+        <span aria-hidden="true"></span>
+        Disponible para colaborar
+      </a>
     </header>
 
     <main id="contenido">
-      <section class="hero section-shell" id="inicio">
-        <div class="hero-grid">
-          <div class="hero-copy reveal is-visible">
-            <p class="eyebrow">Fullstack · IA aplicada · Visión artificial</p>
-            <div class="hero-title-wrap">
-              <h1><span>José Miguel</span> Ruiz Guevara</h1>
-              <p class="hero-banner">Profesor técnico + builder fullstack</p>
-            </div>
-            <p class="hero-lead">
-              Construyo aplicaciones modernas y enseño programación, inteligencia artificial
-              y Big Data. Combino backend, frontend, automatización y análisis de imagen para
-              crear soluciones claras, rápidas y fáciles de mantener.
-            </p>
-
-            <div class="hero-actions" aria-label="Acciones principales">
-              <a class="button primary" href="#proyectos">Ver proyectos</a>
-              <a class="button secondary" href="#contacto">Hablemos</a>
-              <a
-                class="button ghost"
-                href="./Curr%C3%ADculum%20Jose%20Miguel%20Ruiz%20Guevara%20(1).pdf"
-                target="_blank"
-                rel="noreferrer"
-              >
-                CV
-              </a>
-            </div>
-
-            <div class="hero-metrics" aria-label="Especialidades">
-              <article>
-                <strong>Lenguajes</strong>
-                <span>Java, Python, JavaScript, SQL, PHP y Kotlin</span>
-              </article>
-              <article>
-                <strong>Frameworks</strong>
-                <span>Spring Boot, Angular, Node.js, Hibernate y MyBatis</span>
-              </article>
-              <article>
-                <strong>Forma de trabajo</strong>
-                <span>APIs, testing, automatización, CI/CD y documentación</span>
-              </article>
-            </div>
-          </div>
-
-          <div class="hero-visual reveal is-visible" data-hero-visual>
-            <div class="portrait-card">
-              <img
-                src="1764095789903.jpg"
-                width="400"
-                height="400"
-                alt="Retrato profesional de José Miguel Ruiz Guevara"
-                fetchpriority="high"
-                decoding="async"
-              />
-              <div class="portrait-caption">
-                <span>Desarrollador fullstack, profesor y especialista en IA aplicada</span>
-              </div>
-            </div>
-
-            <aside class="signal-panel" aria-label="Foco profesional actual">
-              <span class="signal-dot"></span>
-              <p>Disponible para proyectos de software, IA aplicada y formación técnica.</p>
-              <ul>
-                <li>Backend Java / Spring</li>
-                <li>Automatización y scripting</li>
-                <li>Computer vision + modelos IA</li>
-              </ul>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-shell profile-section" id="perfil">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Perfil</p>
-          <h2>Software, IA y formación técnica con mirada de producto.</h2>
-          <p>
-            Mi perfil une desarrollo fullstack y docencia técnica. Trabajo en sistemas
-            empresariales, plataformas web, automatización, visión artificial y formación,
-            aportando claridad cuando hay que explicar, construir y mejorar a la vez.
+      <section class="hero" id="inicio">
+        <div class="hero-copy" data-reveal>
+          <p class="section-code">01 / PORTFOLIO — GRANADA, ES</p>
+          <h1>
+            Construyo software.
+            <span>Enseño a entenderlo.</span>
+          </h1>
+          <p class="hero-intro">
+            Soy José Miguel, desarrollador full-stack y formador. Trabajo entre Java,
+            producto web e inteligencia artificial para convertir necesidades reales en
+            sistemas que se pueden explicar, mantener y desplegar.
           </p>
-        </div>
-
-        <div class="profile-grid">
-          <article class="profile-card reveal">
-            <span class="card-kicker">Backend</span>
-            <h3>Sistemas robustos</h3>
-            <p>
-              Java, Spring Boot, MyBatis, Hibernate, PL/SQL y bases de datos relacionales
-              para entornos críticos, integraciones y procesos de facturación.
-            </p>
-          </article>
-          <article class="profile-card reveal">
-            <span class="card-kicker">IA aplicada</span>
-            <h3>Modelos que resuelven</h3>
-            <p>
-              Integración de GPT, LLaMA y Gemini, proyectos con Python, TensorFlow,
-              PyTorch, Scikit-learn y prácticas de visión por computador con OpenCV.
-            </p>
-          </article>
-          <article class="profile-card reveal">
-            <span class="card-kicker">Profesor</span>
-            <h3>Enseñar para construir mejor</h3>
-            <p>
-              Creación de temarios, ejercicios y proyectos de programación, IA y Big Data
-              para FP, academias, alumnado joven y perfiles técnicos en crecimiento.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell services-section" id="servicios">
-        <div class="section-heading compact reveal">
-          <p class="eyebrow">Servicios</p>
-          <h2>Un puente entre código, IA y aprendizaje práctico.</h2>
-        </div>
-
-        <div class="service-board">
-          <article class="service-item reveal">
-            <span class="service-count">01</span>
-            <h3>Construir producto</h3>
-            <p>
-              Diseño y desarrollo de aplicaciones web, APIs y procesos backend con foco en
-              rendimiento, mantenibilidad y despliegue real.
-            </p>
-          </article>
-          <article class="service-item reveal">
-            <span class="service-count">02</span>
-            <h3>Aplicar IA con criterio</h3>
-            <p>
-              Automatizaciones, asistentes, análisis de imagen y prototipos con modelos
-              generativos o visión artificial, conectados a necesidades concretas.
-            </p>
-          </article>
-          <article class="service-item reveal">
-            <span class="service-count">03</span>
-            <h3>Formar equipos</h3>
-            <p>
-              Contenido técnico, mentoría y clases prácticas para que el equipo entienda,
-              pruebe y mantenga lo que se está construyendo.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell stack-section" id="tecnologias">
-        <div class="section-heading compact reveal">
-          <p class="eyebrow">Stack y forma de trabajo</p>
-          <h2>Conocimientos organizados por lenguajes, frameworks y prácticas de desarrollo.</h2>
-        </div>
-
-        <div class="stack-grid">
-          <article class="stack-group reveal">
-            <h3>Lenguajes y bases de datos</h3>
-            <div class="tag-list">
-              <span>Java</span>
-              <span>Kotlin</span>
-              <span>Python</span>
-              <span>PHP</span>
-              <span>JavaScript</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
-              <span>SQL</span>
-              <span>PL/SQL</span>
-              <span>MySQL</span>
-              <span>PostgreSQL</span>
-              <span>MongoDB</span>
-            </div>
-          </article>
-
-          <article class="stack-group reveal">
-            <h3>Frameworks y librerías</h3>
-            <div class="tag-list">
-              <span>Spring Boot</span>
-              <span>Hibernate</span>
-              <span>MyBatis</span>
-              <span>Node.js</span>
-              <span>Angular</span>
-              <span>JavaFX</span>
-              <span>Bootstrap</span>
-              <span>Tailwind</span>
-              <span>OpenCV</span>
-              <span>TensorFlow</span>
-              <span>PyTorch</span>
-              <span>Scikit-learn</span>
-            </div>
-          </article>
-
-          <article class="stack-group reveal">
-            <h3>IA aplicada y manera de trabajar</h3>
-            <div class="tag-list">
-              <span>APIs REST</span>
-              <span>Automatización</span>
-              <span>Testing</span>
-              <span>CI/CD</span>
-              <span>Git</span>
-              <span>Docker</span>
-              <span>AWS</span>
-              <span>PWA</span>
-              <span>Responsive UI</span>
-              <span>Documentación técnica</span>
-              <span>Metodologías ágiles</span>
-              <span>Modelos generativos</span>
-              <span>Visión artificial</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell experience-section" id="experiencia">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Experiencia</p>
-          <h2>Trayectoria conectando software, IA, educación y sistemas reales.</h2>
-        </div>
-
-        <div class="timeline" aria-label="Experiencia laboral">
-          <article class="timeline-item reveal">
-            <span class="timeline-date">Actualidad</span>
-            <div>
-              <h3>Técnico de visión artificial · Deuser, Indra Group</h3>
-              <p>
-                Desarrollo de soluciones de software y visión artificial para proyectos
-                industriales y ERP, integrando tecnologías modernas, automatización y soporte
-                técnico especializado.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal">
-            <span class="timeline-date">Actualidad</span>
-            <div>
-              <h3>Profesor de IA y Big Data · IFP / Code Space</h3>
-              <p>
-                Diseño e impartición de contenidos de programación en inteligencia artificial
-                con Python, Scikit-learn, TensorFlow, GPT, visión por computador y prácticas
-                aplicadas.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal">
-            <span class="timeline-date">2024</span>
-            <div>
-              <h3>Fullstack Developer · Neotalent para Grupo Piñero</h3>
-              <p>
-                Desarrollo de sistemas de facturación con Java y PL/SQL, modernización de
-                proyectos Java y automatización de pruebas con Python.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal">
-            <span class="timeline-date">2023</span>
-            <div>
-              <h3>Fullstack Developer · NTT Data y Sipadan</h3>
-              <p>
-                Migraciones a Spring Boot, aplicaciones empresariales con JavaFX y MySQL,
-                plataformas e-learning, CRM en Angular y asistentes IA para soporte técnico.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item reveal">
-            <span class="timeline-date">Fintech</span>
-            <div>
-              <h3>Analista programador · Ayesa</h3>
-              <p>
-                Integraciones críticas en sistemas TPV-PC para Redsys LATAM, trabajando con
-                dispositivos físicos, PIN Pads, terminales de pago y protocolos EMV.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section-shell projects-section" id="proyectos">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Proyectos propios</p>
-          <h2>Dos productos reales, publicados y enfocados a utilidad inmediata.</h2>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card reveal">
+          <div class="hero-links">
+            <a class="text-link text-link-strong" href="#trabajo">
+              Ver trabajo seleccionado <span aria-hidden="true">↘</span>
+            </a>
             <a
-              class="project-media"
+              class="text-link"
+              href="./Curr%C3%ADculum%20Jose%20Miguel%20Ruiz%20Guevara%20(1).pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Abrir CV <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-portrait" data-reveal data-portrait>
+          <div class="portrait-frame">
+            <img
+              src="assets/portrait-800.webp"
+              srcset="assets/portrait-400.webp 400w, assets/portrait-800.webp 800w"
+              sizes="(max-width: 640px) 82vw, (max-width: 900px) 42vw, 400px"
+              width="800"
+              height="800"
+              alt="Retrato de José Miguel Ruiz Guevara"
+              decoding="async"
+              fetchpriority="high"
+            >
+            <span class="portrait-index" aria-hidden="true">CHEMI / 90</span>
+            <div class="portrait-scan" aria-hidden="true"></div>
+          </div>
+          <div class="portrait-notes">
+            <span>Full-stack</span>
+            <span>IA aplicada</span>
+            <span>Docencia técnica</span>
+          </div>
+        </div>
+
+        <aside class="hero-now" data-reveal aria-label="Foco profesional actual">
+          <p class="section-code">AHORA</p>
+          <p>
+            Técnico de visión artificial en Deuser, Indra Group. Profesor de IA y Big Data.
+            Construyendo Nébula Sur.
+          </p>
+        </aside>
+      </section>
+
+      <div class="kinetic-rail" role="group" aria-label="Áreas de especialidad">
+        <div class="kinetic-track">
+          <span>JAVA / SPRING BOOT</span><i>•</i>
+          <span>REACT / ANGULAR</span><i>•</i>
+          <span>PYTHON / COMPUTER VISION</span><i>•</i>
+          <span>RAG / AUTOMATIZACIÓN</span><i>•</i>
+          <span>FORMACIÓN TÉCNICA</span><i>•</i>
+          <span aria-hidden="true">JAVA / SPRING BOOT</span><i aria-hidden="true">•</i>
+          <span aria-hidden="true">REACT / ANGULAR</span><i aria-hidden="true">•</i>
+          <span aria-hidden="true">PYTHON / COMPUTER VISION</span><i aria-hidden="true">•</i>
+          <span aria-hidden="true">RAG / AUTOMATIZACIÓN</span><i aria-hidden="true">•</i>
+          <span aria-hidden="true">FORMACIÓN TÉCNICA</span><i aria-hidden="true">•</i>
+        </div>
+      </div>
+
+      <section class="section section-profile" id="perfil">
+        <div class="section-side" data-reveal>
+          <p class="section-code">02 / PERFIL</p>
+          <p class="side-note">Código, producto y aula comparten una regla: si no se entiende, aún no está terminado.</p>
+        </div>
+
+        <div class="profile-copy" data-reveal>
+          <h2>No vendo “innovación”. Resuelvo la parte difícil.</h2>
+          <p class="profile-lead">
+            Puedo entrar en un backend Java, plantear una interfaz, automatizar un proceso o
+            preparar una formación técnica sin perder de vista para qué sirve el resultado.
+          </p>
+
+          <div class="principles">
+            <article>
+              <span>01</span>
+              <div>
+                <h3>Primero el problema</h3>
+                <p>
+                  La tecnología se elige después de entender el flujo, los datos y a quién
+                  le toca mantenerlo.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>02</span>
+              <div>
+                <h3>IA donde aporta</h3>
+                <p>
+                  RAG, visión, modelos generativos o automatización cuando mejoran una tarea;
+                  no para decorar una propuesta.
+                </p>
+              </div>
+            </article>
+            <article>
+              <span>03</span>
+              <div>
+                <h3>Dejarlo explicable</h3>
+                <p>
+                  Arquitectura, pruebas y documentación suficientes para que el proyecto no
+                  dependa de una sola persona.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-work" id="trabajo">
+        <header class="work-header" data-reveal>
+          <p class="section-code">03 / TRABAJO SELECCIONADO</p>
+          <h2>Productos que ya tienen algo que enseñar.</h2>
+          <p>
+            Una selección breve de producto propio, plataformas en desarrollo y demos
+            técnicas. El contexto y el alcance importan más que la lista de tecnologías.
+          </p>
+        </header>
+
+        <div class="case-list">
+          <article class="case-study" data-reveal>
+            <div class="case-meta">
+              <span>01</span>
+              <p>Producto propio · En producción</p>
+            </div>
+            <a
+              class="case-media"
               href="https://nebulasur.es/"
               target="_blank"
               rel="noreferrer"
               aria-label="Abrir Nébula Sur"
             >
               <img
-                src="assets/nebulasur-preview.jpg"
+                src="assets/nebulasur-preview-720.webp"
+                srcset="
+                  assets/nebulasur-preview-480.webp 480w,
+                  assets/nebulasur-preview-720.webp 720w,
+                  assets/nebulasur-preview-960.webp 960w
+                "
+                sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 900px) calc(100vw - 140px), 520px"
                 width="960"
                 height="600"
-                alt="Vista previa de la web Nébula Sur"
+                alt="Captura del sitio web de Nébula Sur"
                 loading="lazy"
                 decoding="async"
-              />
-              <span class="project-corner" aria-hidden="true"><span>→</span></span>
+              >
+              <span class="media-action">Visitar ↗</span>
             </a>
-            <div class="project-content">
-              <p class="project-type">Servicios, automatización e IA</p>
+            <div class="case-copy">
               <h3>Nébula Sur</h3>
               <p>
-                Web corporativa para servicios locales y consultoría online en España:
-                IA aplicada, automatización, digitalización, formación, electricidad,
-                limpieza y mantenimiento informático.
+                Sitio corporativo multidioma para servicios locales y soluciones digitales:
+                IA aplicada, automatización, formación y consultoría. Incluye SEO estático,
+                formulario protegido y una carga pensada para producción.
               </p>
-              <div class="project-tags" aria-label="Tecnologías y enfoque">
-                <span>Web corporativa</span>
-                <span>IA aplicada</span>
-                <span>Consultoría</span>
+              <dl>
+                <div><dt>Papel</dt><dd>Producto, desarrollo y contenido</dd></div>
+                <div><dt>Base</dt><dd>React, Vite, Canvas, Netlify</dd></div>
+              </dl>
+              <div class="case-links">
+                <a href="https://nebulasur.es/" target="_blank" rel="noreferrer">Web ↗</a>
+                <a
+                  href="https://github.com/Chemi90/nebulaSur"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Código ↗
+                </a>
               </div>
-              <a class="project-link" href="https://nebulasur.es/" target="_blank" rel="noreferrer">
-                Abrir proyecto
-              </a>
             </div>
           </article>
 
-          <article class="project-card reveal">
+          <article class="case-study case-study-platform" data-reveal>
+            <div class="case-meta">
+              <span>02</span>
+              <p>Monorepo SaaS · En desarrollo</p>
+            </div>
+            <div
+              class="case-media platform-map"
+              role="img"
+              aria-label="Mapa de productos de Nébula Platform"
+            >
+              <p>NÉBULA / PLATFORM</p>
+              <div class="map-line map-line-a" aria-hidden="true"></div>
+              <div class="map-line map-line-b" aria-hidden="true"></div>
+              <div class="map-line map-line-c" aria-hidden="true"></div>
+              <span class="map-core">API</span>
+              <span class="map-node map-node-a">PARTES</span>
+              <span class="map-node map-node-b">FACTURACIÓN</span>
+              <span class="map-node map-node-c">COMUNIDADES</span>
+              <i class="map-signal map-signal-a" aria-hidden="true"></i>
+              <i class="map-signal map-signal-b" aria-hidden="true"></i>
+              <i class="map-signal map-signal-c" aria-hidden="true"></i>
+            </div>
+            <div class="case-copy">
+              <h3>Nébula Platform</h3>
+              <p>
+                Monorepo para una familia de SaaS orientada a empresas de servicios. Reúne
+                frontends y APIs por producto, PWA para técnicos, paneles de alta, cuenta y
+                administración, microservicios, auditoría y persistencia multiempresa.
+              </p>
+              <dl>
+                <div>
+                  <dt>Productos</dt>
+                  <dd>Partes, Limpieza, Comunidades, Facturación y Registro</dd>
+                </div>
+                <div><dt>Base</dt><dd>TypeScript, PWA, PostgreSQL, Supabase, Railway</dd></div>
+              </dl>
+              <p class="private-note">Repositorio privado · producto en desarrollo activo</p>
+            </div>
+          </article>
+
+          <article class="case-study" data-reveal>
+            <div class="case-meta">
+              <span>03</span>
+              <p>Aplicación full-stack · Producto propio</p>
+            </div>
             <a
-              class="project-media"
+              class="case-media"
               href="https://appgymregistro.netlify.app/"
               target="_blank"
               rel="noreferrer"
               aria-label="Abrir Gym Tracker"
             >
               <img
-                src="assets/gymtracker-preview.jpg"
+                src="assets/gymtracker-preview-720.webp"
+                srcset="
+                  assets/gymtracker-preview-480.webp 480w,
+                  assets/gymtracker-preview-720.webp 720w,
+                  assets/gymtracker-preview-960.webp 960w
+                "
+                sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 900px) calc(100vw - 140px), 520px"
                 width="960"
                 height="600"
-                alt="Vista previa de Gym Tracker"
+                alt="Captura de la aplicación Gym Tracker"
                 loading="lazy"
                 decoding="async"
-              />
-              <span class="project-corner" aria-hidden="true"><span>→</span></span>
-            </a>
-            <div class="project-content">
-              <p class="project-type">Entrenamiento, nutrición e IA</p>
-              <h3>Gym Tracker</h3>
-              <p>
-                Aplicación fullstack para registrar entrenos, comidas, medidas y progreso.
-                Genera planes con IA, guarda plantillas reutilizables y exporta informes PDF
-                por intervalo.
-              </p>
-              <div class="project-tags" aria-label="Tecnologías y enfoque">
-                <span>Spring Boot</span>
-                <span>MySQL</span>
-                <span>PWA</span>
-                <span>IA</span>
-              </div>
-              <a
-                class="project-link"
-                href="https://appgymregistro.netlify.app/"
-                target="_blank"
-                rel="noreferrer"
               >
-                Abrir proyecto
-              </a>
+              <span class="media-action">Abrir ↗</span>
+            </a>
+            <div class="case-copy">
+              <h3>AppGYM</h3>
+              <p>
+                Ecosistema para registrar entrenamientos, comidas, medidas y evolución.
+                Incluye planes asistidos por IA y un portal separado para que entrenadores
+                vinculen clientes y consulten su seguimiento.
+              </p>
+              <dl>
+                <div><dt>Alcance</dt><dd>Cliente, API y portal trainer</dd></div>
+                <div><dt>Base</dt><dd>Spring Boot, MySQL, JavaScript, PWA</dd></div>
+              </dl>
+              <div class="case-links">
+                <a
+                  href="https://appgymregistro.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Aplicación ↗
+                </a>
+                <a
+                  href="https://github.com/Chemi90/front-trainer"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Portal trainer ↗
+                </a>
+              </div>
             </div>
           </article>
+        </div>
 
-          <article class="project-card project-card-empty reveal">
-            <a class="project-empty-link" href="#contacto">
-              <span class="project-plus" aria-hidden="true">+</span>
-              <p class="project-type">Siguiente reto</p>
-              <h3>¿Tienes un producto, automatización o formación que lanzar?</h3>
-              <span class="project-link">Cuéntame la idea</span>
-            </a>
+        <div class="lab-index" data-reveal>
+          <div class="lab-heading">
+            <p class="section-code">LAB / GITHUB</p>
+            <h3>Otros repositorios con contexto</h3>
+          </div>
+          <a href="https://github.com/Chemi90/demoMAGIC" target="_blank" rel="noreferrer">
+            <span>demoMAGIC</span>
+            <p>Asistente comercial con RAG, búsqueda híbrida y acciones de negocio.</p>
+            <em>Java / Spring / OpenAI</em>
+            <i aria-hidden="true">↗</i>
+          </a>
+          <a
+            href="https://github.com/Chemi90/gestorE-Learning"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>gestorE-Learning</span>
+            <p>Base de microservicios para formación, JWT e infraestructura preparada para IA.</p>
+            <em>Angular / Java / Docker</em>
+            <i aria-hidden="true">↗</i>
+          </a>
+          <a href="https://github.com/Chemi90" target="_blank" rel="noreferrer">
+            <span>Chemi90</span>
+            <p>Perfil, repositorios públicos y trabajo reciente.</p>
+            <em>GitHub</em>
+            <i aria-hidden="true">↗</i>
+          </a>
+        </div>
+      </section>
+
+      <section class="section section-experience" id="experiencia">
+        <div class="experience-intro" data-reveal>
+          <p class="section-code">04 / EXPERIENCIA</p>
+          <h2>He trabajado en industria, fintech, producto y formación.</h2>
+          <p>
+            Esa mezcla me permite moverme desde el detalle técnico hasta una explicación
+            clara para un equipo o un aula.
+          </p>
+        </div>
+
+        <div class="experience-list">
+          <article data-reveal>
+            <time>Actualidad</time>
+            <div>
+              <p class="experience-company">Deuser · Indra Group</p>
+              <h3>Técnico de visión artificial</h3>
+              <p>
+                Software y visión por computador para proyectos industriales y ERP:
+                automatización, mejora de sistemas y soporte técnico especializado.
+              </p>
+            </div>
+          </article>
+          <article data-reveal>
+            <time>Actualidad</time>
+            <div>
+              <p class="experience-company">IFP / Code Space</p>
+              <h3>Profesor de IA, Big Data y programación</h3>
+              <p>
+                Temarios y prácticas con Python, machine learning, deep learning, GPT,
+                TensorFlow, Scikit-learn y visión por computador con OpenCV.
+              </p>
+            </div>
+          </article>
+          <article class="experience-featured" data-reveal>
+            <time>Jun · 2026</time>
+            <div>
+              <p class="experience-company">
+                NobleProg · Ministerio de Transformación Digital
+              </p>
+              <h3>Formador — IA aplicada a redes de telecomunicaciones</h3>
+              <p>
+                Formación online de 15 horas impartida los días 24, 25 y 26 de junio.
+                Planificación y optimización de red, QoS/QoE, AIOps, degradación de servicio,
+                IA generativa, asistentes, agentes y gobernanza con prácticas sobre datos
+                sintéticos o anonimizados.
+              </p>
+            </div>
+            <span class="featured-stamp">15 H / ONLINE</span>
+          </article>
+          <article data-reveal>
+            <time>2024</time>
+            <div>
+              <p class="experience-company">Neotalent · Grupo Piñero</p>
+              <h3>Desarrollador full-stack</h3>
+              <p>
+                Sistemas de facturación en Java y PL/SQL, modernización a Java 21 y
+                automatización de pruebas con Python.
+              </p>
+            </div>
+          </article>
+          <article data-reveal>
+            <time>2023</time>
+            <div>
+              <p class="experience-company">NTT Data · Sipadan</p>
+              <h3>Desarrollador full-stack</h3>
+              <p>
+                Migraciones a Spring Boot, aplicaciones empresariales con JavaFX y MySQL,
+                plataformas e-learning, Angular y asistentes para soporte.
+              </p>
+            </div>
+          </article>
+          <article data-reveal>
+            <time>Fintech</time>
+            <div>
+              <p class="experience-company">Ayesa</p>
+              <h3>Analista programador</h3>
+              <p>
+                Integraciones para Redsys LATAM con terminales de pago, PIN Pads, sistemas
+                distribuidos y protocolos EMV.
+              </p>
+            </div>
           </article>
         </div>
       </section>
 
-      <section class="section-shell contact-section" id="contacto">
-        <div class="contact-copy reveal">
-          <p class="eyebrow">Contacto</p>
-          <h2>¿Tienes un sistema que modernizar, una idea que lanzar o un equipo que formar?</h2>
-          <p>
-            Escríbeme y vemos cómo convertirlo en una solución clara, rápida y sostenible.
-          </p>
+      <section class="section section-stack">
+        <div class="stack-title" data-reveal>
+          <p class="section-code">05 / HERRAMIENTAS</p>
+          <h2>Stack, sin nube de etiquetas.</h2>
+        </div>
+        <div class="stack-ledger" data-reveal>
+          <div>
+            <h3>Backend</h3>
+            <p>Java, Spring Boot, Hibernate, MyBatis, Node.js, PHP</p>
+          </div>
+          <div>
+            <h3>Frontend</h3>
+            <p>React, Angular, TypeScript, JavaScript, HTML, CSS, PWA</p>
+          </div>
+          <div>
+            <h3>IA y datos</h3>
+            <p>Python, OpenCV, Scikit-learn, TensorFlow, PyTorch, RAG, modelos generativos</p>
+          </div>
+          <div>
+            <h3>Infraestructura</h3>
+            <p>PostgreSQL, MySQL, MongoDB, Redis, MinIO, Docker, GitHub Actions, Netlify, Railway</p>
+          </div>
+        </div>
+      </section>
 
-          <div class="contact-links" aria-label="Enlaces de contacto">
-            <a href="mailto:xemiruiz@gmail.com">xemiruiz@gmail.com</a>
-            <a href="tel:+34655309861">+34 655 30 98 61</a>
+      <section class="contact" id="contacto">
+        <div class="contact-main" data-reveal>
+          <p class="section-code">06 / CONTACTO</p>
+          <h2>Si el proyecto necesita código y criterio, podemos hablar.</h2>
+          <p>
+            Desarrollo de software, IA aplicada, automatización o formación técnica.
+            Cuéntame qué necesitas resolver.
+          </p>
+          <a class="contact-email" href="mailto:xemiruiz@gmail.com">xemiruiz@gmail.com ↗</a>
+          <div class="contact-social">
             <a href="https://github.com/Chemi90" target="_blank" rel="noreferrer">GitHub</a>
             <a
               href="https://www.linkedin.com/in/josemiguelruizguevara/"
@@ -436,46 +539,52 @@
             >
               LinkedIn
             </a>
+            <a href="tel:+34655309861">+34&nbsp;655&nbsp;30&nbsp;98&nbsp;61</a>
           </div>
         </div>
 
         <form
-          class="contact-form reveal"
+          class="contact-form"
           id="contactForm"
           action="https://formspree.io/f/xldrkjyd"
-          method="POST"
+          method="post"
+          data-reveal
         >
-          <label for="name">Nombre</label>
-          <input type="text" name="name" id="name" autocomplete="name" required />
-
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" autocomplete="email" required />
-
-          <label for="phone">Teléfono</label>
-          <input type="tel" name="phone" id="phone" autocomplete="tel" />
-
-          <label for="message">Mensaje</label>
-          <textarea name="message" id="message" rows="5" required></textarea>
-
+          <div class="field">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="message">¿Qué quieres resolver?</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
+          </div>
           <div class="form-honeypot" aria-hidden="true">
-            <label for="contact-website">Website</label>
+            <label for="contact-website">No rellenar</label>
             <input
               type="text"
               name="_gotcha"
               id="contact-website"
               tabindex="-1"
               autocomplete="off"
-            />
+            >
           </div>
-
-          <button class="button primary form-button" type="submit">Enviar mensaje</button>
+          <button type="submit">
+            Enviar mensaje
+            <span aria-hidden="true">↗</span>
+          </button>
           <p class="form-status" aria-live="polite"></p>
         </form>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 José Miguel Ruiz Guevara. Desarrollador fullstack, profesor de IA y visión artificial.</p>
+      <p>© 2026 José Miguel Ruiz Guevara</p>
+      <p>Hecho con HTML, CSS y JavaScript. Sin dependencias.</p>
+      <a href="#inicio">Volver arriba ↑</a>
     </footer>
   </body>
 </html>
