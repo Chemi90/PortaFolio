@@ -10,7 +10,7 @@ docencia técnica.
 ## Qué contiene
 
 - Presentación y forma de trabajo.
-- Nébula Sur, Nébula Platform y AppGYM como casos principales.
+- Nébula Sur, Nébula Platform y GymTracker como casos principales.
 - demoMAGIC y gestorE-Learning como proyectos de laboratorio.
 - Experiencia en industria, fintech y formación.
 - Curso «IA aplicada a redes de telecomunicaciones» impartido para

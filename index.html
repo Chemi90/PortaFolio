@@ -285,54 +285,98 @@
           <article class="case-study case-study-platform" data-reveal>
             <div class="case-meta">
               <span>02</span>
-              <p>Monorepo SaaS · En desarrollo</p>
+              <p>Plataforma SaaS · Desplegada</p>
             </div>
             <div
               class="case-media platform-map"
               role="img"
-              aria-label="Mapa de productos de Nébula Platform"
+              aria-label="Nébula Platform: acceso unificado a Partes, Limpieza, Comunidades, Facturación y Registro horario"
             >
-              <p>NÉBULA / PLATFORM</p>
-              <div class="map-line map-line-a" aria-hidden="true"></div>
-              <div class="map-line map-line-b" aria-hidden="true"></div>
-              <div class="map-line map-line-c" aria-hidden="true"></div>
-              <span class="map-core">API</span>
-              <span class="map-node map-node-a">PARTES</span>
-              <span class="map-node map-node-b">FACTURACIÓN</span>
-              <span class="map-node map-node-c">COMUNIDADES</span>
-              <i class="map-signal map-signal-a" aria-hidden="true"></i>
-              <i class="map-signal map-signal-b" aria-hidden="true"></i>
-              <i class="map-signal map-signal-c" aria-hidden="true"></i>
+              <div class="platform-topbar">
+                <span class="platform-mark">NP</span>
+                <p>
+                  <strong>NÉBULA PLATFORM</strong>
+                  <small>OPERATIONS OS / MULTIEMPRESA</small>
+                </p>
+                <i><span></span> ONLINE</i>
+              </div>
+              <div class="platform-access">
+                <span>ALTA</span>
+                <span>CUENTA</span>
+                <strong>ACCESO UNIFICADO</strong>
+                <span>ADMIN</span>
+              </div>
+              <div class="platform-products">
+                <span class="platform-product platform-product-main">
+                  <small>01 / OPERACIONES</small>
+                  <strong>PARTES</strong>
+                  <em>Técnicos · firmas · evidencias</em>
+                </span>
+                <span class="platform-product">
+                  <small>02 / SERVICIOS</small>
+                  <strong>LIMPIEZA</strong>
+                </span>
+                <span class="platform-product">
+                  <small>03 / GESTIÓN</small>
+                  <strong>COMUNIDADES</strong>
+                </span>
+                <span class="platform-product">
+                  <small>04 / NEGOCIO</small>
+                  <strong>FACTURACIÓN</strong>
+                </span>
+                <span class="platform-product">
+                  <small>05 / EQUIPOS</small>
+                  <strong>REGISTRO HORARIO</strong>
+                </span>
+              </div>
+              <div class="platform-foundation">
+                <p>AUTH · DATOS · AUDITORÍA · SERVICIOS COMPARTIDOS</p>
+                <span>RAILWAY / NETLIFY</span>
+              </div>
+              <i class="platform-sweep" aria-hidden="true"></i>
             </div>
             <div class="case-copy">
               <h3>Nébula Platform</h3>
               <p>
-                Monorepo para una familia de SaaS orientada a empresas de servicios. Reúne
-                frontends y APIs por producto, PWA para técnicos, paneles de alta, cuenta y
-                administración, microservicios, auditoría y persistencia multiempresa.
+                Plataforma multiempresa que reúne bajo un mismo acceso cinco productos SaaS:
+                partes de trabajo, limpieza, comunidades, facturación y registro horario.
+                Cada producto mantiene su frontend y API, apoyados por autenticación, cuenta,
+                administración y servicios compartidos.
               </p>
               <dl>
                 <div>
-                  <dt>Productos</dt>
-                  <dd>Partes, Limpieza, Comunidades, Facturación y Registro</dd>
+                  <dt>Alcance</dt>
+                  <dd>5 productos · alta · cuenta · administración</dd>
                 </div>
-                <div><dt>Base</dt><dd>TypeScript, PWA, PostgreSQL, Supabase, Railway</dd></div>
+                <div>
+                  <dt>Base</dt>
+                  <dd>TypeScript, PWA, PostgreSQL, Supabase, Railway, Netlify</dd>
+                </div>
               </dl>
-              <p class="private-note">Repositorio privado · producto en desarrollo activo</p>
+              <div class="case-links">
+                <a
+                  href="https://nebulasur-platform.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Abrir plataforma ↗
+                </a>
+              </div>
+              <p class="private-note">Acceso privado · desarrollo y despliegue activos</p>
             </div>
           </article>
 
           <article class="case-study" data-reveal>
             <div class="case-meta">
               <span>03</span>
-              <p>Aplicación full-stack · Producto propio</p>
+              <p>Plataforma fitness · En producción</p>
             </div>
             <a
               class="case-media"
               href="https://appgymregistro.netlify.app/"
               target="_blank"
               rel="noreferrer"
-              aria-label="Abrir Gym Tracker"
+              aria-label="Abrir GymTracker"
             >
               <img
                 src="assets/gymtracker-preview-720.webp"
@@ -344,22 +388,22 @@
                 sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 900px) calc(100vw - 140px), 520px"
                 width="960"
                 height="600"
-                alt="Captura de la aplicación Gym Tracker"
+                alt="Nueva interfaz de la aplicación GymTracker"
                 loading="lazy"
                 decoding="async"
               >
               <span class="media-action">Abrir ↗</span>
             </a>
             <div class="case-copy">
-              <h3>AppGYM</h3>
+              <h3>GymTracker</h3>
               <p>
-                Ecosistema para registrar entrenamientos, comidas, medidas y evolución.
-                Incluye planes asistidos por IA y un portal separado para que entrenadores
-                vinculen clientes y consulten su seguimiento.
+                Plataforma para organizar entrenamientos, comidas, rutas, medidas y planes
+                desde una sola cuenta. Incorpora entrenador con IA, análisis de comidas,
+                informes PDF, monedero de energía y un portal específico para profesionales.
               </p>
               <dl>
-                <div><dt>Alcance</dt><dd>Cliente, API y portal trainer</dd></div>
-                <div><dt>Base</dt><dd>Spring Boot, MySQL, JavaScript, PWA</dd></div>
+                <div><dt>Alcance</dt><dd>App, portal profesional y APIs por dominio</dd></div>
+                <div><dt>Base</dt><dd>Angular 21, Spring Boot, microservicios, PWA</dd></div>
               </dl>
               <div class="case-links">
                 <a
@@ -374,7 +418,7 @@
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Portal trainer ↗
+                  Portal profesional ↗
                 </a>
               </div>
             </div>
